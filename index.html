@@ -153,13 +153,19 @@
                 </div>
             </div>
             <a href="project-acwr.html" class="project-image" title="Click to view full project">
-                <img src="images/Weeder-1.png" alt="Automated Cassava Weeder Robot preview">
+                <div class="slideshow">
+                    <img src="images/Weeder-1.png" alt="Automated Cassava Weeder Robot preview" class="slide">
+                    <img src="images/Ladder Frame.png" alt="Ladder Frame" class="slide">
+                    <img src="images/Weeder-2.png" alt="Weeder detail" class="slide">
+                    <img src="images/Weeder-3.png" alt="Weeder exploded view" class="slide">
+                </div>
                 <div class="image-overlay">
                     <span>
                         <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/maximize-2.svg" class="overlay-icon" alt="" aria-hidden="true">
                         View Full Project
                     </span>
                 </div>
+                <span class="tap-hint">Tap to view project →</span>
             </a>
         </div>
 
@@ -181,13 +187,18 @@
                 </div>
             </div>
             <a href="project-pewtu.html" class="project-image" title="Click to view full project">
-                <img src="images/PhotoEc-2.png" alt="Photo-Electrocoagulation Water Treatment Unit preview">
+                <div class="slideshow">
+                    <img src="images/PhotoEc-2.png" alt="Photo-EC Unit preview" class="slide">
+                    <img src="images/PhotoEc-1.png" alt="Photo-EC Unit assembly" class="slide">
+                    <img src="images/PhotoEc-3.png" alt="Photo-EC electrode detail" class="slide">
+                </div>
                 <div class="image-overlay">
                     <span>
                         <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/maximize-2.svg" class="overlay-icon" alt="" aria-hidden="true">
                         View Full Project
                     </span>
                 </div>
+                <span class="tap-hint">Tap to view project →</span>
             </a>
         </div>
 
@@ -209,13 +220,18 @@
                 </div>
             </div>
             <a href="project-ocfta.html" class="project-image" title="Click to view full project">
-                <img src="images/Rendered OCFTA.jpg" alt="Open Channel Flow Teaching Apparatus preview">
+                <div class="slideshow">
+                    <img src="images/Rendered OCFTA.jpg" alt="Open Channel Flow Teaching Apparatus preview" class="slide">
+                    <img src="images/tank-1.jpg" alt="Tank assembly" class="slide">
+                    <img src="images/tank-2.png" alt="FEA stress plot" class="slide">
+                </div>
                 <div class="image-overlay">
                     <span>
                         <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/maximize-2.svg" class="overlay-icon" alt="" aria-hidden="true">
                         View Full Project
                     </span>
                 </div>
+                <span class="tap-hint">Tap to view project →</span>
             </a>
         </div>
 
@@ -245,29 +261,75 @@
     </div>
 </footer>
 
+<!-- Certificate Lightbox -->
+<div id="cert-lightbox" role="dialog" aria-modal="true" aria-label="Certificate image">
+    <button id="cert-lightbox-close" aria-label="Close">&times;</button>
+    <img id="cert-lightbox-img" src="" alt="Certificate">
+    <p id="cert-lightbox-hint">Tap anywhere outside the image to close</p>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/feather.min.js"></script>
 <script>
     feather.replace();
 
+    // ── Navbar hide on scroll ──
     const navbar = document.getElementById('navbar');
     let scrollTimeout;
     let lastScroll = 0;
-
     window.addEventListener('scroll', () => {
         const currentScroll = window.scrollY;
-        if (currentScroll <= 60) {
-            navbar.classList.remove('hidden');
-            return;
-        }
-        if (currentScroll < lastScroll) {
-            navbar.classList.remove('hidden');
-        }
+        if (currentScroll <= 60) { navbar.classList.remove('hidden'); return; }
+        if (currentScroll < lastScroll) navbar.classList.remove('hidden');
         lastScroll = currentScroll;
         clearTimeout(scrollTimeout);
         scrollTimeout = setTimeout(() => {
             if (window.scrollY > 60) navbar.classList.add('hidden');
         }, 2000);
     });
+
+    // ── Project image slideshow (horizontal scroll) ──
+    document.querySelectorAll('.slideshow').forEach(show => {
+        const slides = show.querySelectorAll('.slide');
+        if (slides.length < 2) return;
+        let current = 0;
+
+        setInterval(() => {
+            current = (current + 1) % slides.length;
+            show.style.transition = 'transform 0.6s ease';
+            show.style.transform = `translateX(-${current * 100}%)`;
+
+            // After reaching the last slide, snap silently back to the first
+            if (current === slides.length - 1) {
+                setTimeout(() => {
+                    show.style.transition = 'none';
+                    show.style.transform = 'translateX(0)';
+                    current = 0;
+                }, 3600);
+            }
+        }, 3000);
+    });
+
+    // ── Certificate lightbox ──
+    const lightbox     = document.getElementById('cert-lightbox');
+    const lightboxImg  = document.getElementById('cert-lightbox-img');
+    const lightboxClose = document.getElementById('cert-lightbox-close');
+
+    document.querySelectorAll('.cert-image-wrap').forEach(wrap => {
+        wrap.addEventListener('click', () => {
+            lightboxImg.src = wrap.querySelector('img').src;
+            lightboxImg.alt = wrap.querySelector('img').alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 </script>
 </body>
 </html>
