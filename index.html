@@ -4,26 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Makanjuola Tolulope | Mechanical Design Portfolio</title>
-    <!-- Open Graph / WhatsApp / Facebook -->
     <meta property="og:title" content="Tolulope Makanjuola | Mechanical Design Portfolio">
     <meta property="og:description" content="Mechanical Engineering undergraduate and CAD designer specializing in SolidWorks, Fusion 360, and AutoCAD. View selected projects and design work.">
     <meta property="og:image" content="https://tolulope-makanjuola.github.io/mechanical-design-portfolio/images/Professional Look.jpg">
-    <meta property="og:url" content="https://tolulope-makanjuola.github.io/mechanical-design-portfolio/>
+    <meta property="og:url" content="https://tolulope-makanjuola.github.io/mechanical-design-portfolio/">
     <meta property="og:type" content="website">
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
 <!-- Navigation -->
-<nav class="light">
+<nav class="light" id="navbar">
     <div class="container nav-content">
         <img src="images/logo.jpg" alt="My logo" class="logo" title="Logo">
-        <ul class="high">
+        <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#certificates">Certificates</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
@@ -32,48 +31,83 @@
 <!-- Hero Section -->
 <header class="hero">
     <div class="container hero-content">
-
         <div class="hero-text">
             <h1>MAKANJUOLA TOLULOPE</h1>
             <p class="subtitle">Mechanical Engineering | University of Ibadan</p>
             <p class="tagline">Mechanical Design Portfolio · 2026</p>
-
             <div class="contact-links">
                 <a href="mailto:makanjuolatolulope8@gmail.com">Email</a>
                 <a href="https://linkedin.com/in/makanjuola-tolulope" target="_blank">LinkedIn</a>
             </div>
         </div>
-
         <div class="hero-image">
-            <img src="images/Professional Look.jpg" alt="Makanjuola Tolulope" width="782px">
+            <img src="images/Professional Look.jpg" alt="Makanjuola Tolulope">
         </div>
-
     </div>
 </header>
 
 <!-- About Section -->
 <section id="about" class="about">
-    <div class="container">
-        <h2>About Me</h2>
-        <p>
-            I am a mechanical engineering undergraduate and CAD designer focused on mechanical systems, 
-            product development, and fabrication-ready design. I specialize in translating engineering concepts into 
-            functional 3D models, detailed assemblies, and clear technical drawings using SolidWorks, AutoCAD, and Fusion 360.
-        </p>
-        <h2 class="skills">Leadership & Design Community</h2>
-        <p>
-            I co-lead a university design club, where I mentor members in CAD modeling, mechanical design 
-            principles, and project development, helping bridge theoretical knowledge with 
-            practical engineering application
-        </p>
+    <div class="container about-grid">
+        <div class="about-main">
+            <h2>About Me</h2>
+            <p>
+                I am a mechanical engineering undergraduate and CAD designer focused on mechanical systems, 
+                product development, and fabrication-ready design. I specialise in translating engineering concepts into 
+                functional 3D models, detailed assemblies, and clear technical drawings using SolidWorks, AutoCAD, and Fusion 360.
+            </p>
+            <h2 class="skills">Leadership &amp; Design Community</h2>
+            <p>
+                I co-lead a university design club, where I mentor members in CAD modelling, mechanical design 
+                principles, and project development — helping bridge theoretical knowledge with 
+                practical engineering application.
+            </p>
+        </div>
+        <div class="about-skills">
+            <h3 class="section-subhead">Core Skills</h3>
+            <div class="skills">
+                <span>SolidWorks</span>
+                <span>AutoCAD</span>
+                <span>Fusion 360</span>
+                <span>CAD Modelling</span>
+                <span>Prototype Development</span>
+                <span>Design for Manufacturing</span>
+                <span>FEA Simulation</span>
+                <span>Technical Drawing</span>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <div class="skills">
-            <span>SolidWorks</span>
-            <span>AutoCAD</span>
-            <span>Fusion 360</span>
-            <span>CAD Modeling</span>
-            <span>Prototype Development</span>
-            <span>Design for Manufacturing</span>
+<!-- Certificates Section -->
+<section id="certificates" class="certificates">
+    <div class="container">
+        <h2>Certificates &amp; Training</h2>
+        <p class="section-intro">Formal credentials and professional development courses completed alongside my degree programme.</p>
+        <div class="cert-grid">
+
+            <div class="cert-card">
+                <div class="cert-image-wrap">
+                    <img src="images/cert-cswa.jpg" alt="CSWA Certificate">
+                </div>
+                <div class="cert-body">
+                    <p class="cert-title">Certified SolidWorks Associate (CSWA)</p>
+                    <p class="cert-issuer">Dassault Systèmes · 2026</p>
+                    <p class="cert-desc">Industry-recognised credential validating proficiency in SolidWorks 3D CAD modelling, part design, assembly creation, and engineering drawing interpretation.</p>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-image-wrap">
+                    <img src="images/cert-aakruti.jpg" alt="Aakruti Innovation Competition Certificate">
+                </div>
+                <div class="cert-body">
+                    <p class="cert-title">Certificate of Participation — Aakruti Innovation Competition</p>
+                    <p class="cert-issuer">Aakruti · 2025</p>
+                    <p class="cert-desc">Participated in the Aakruti international CAD innovation competition, showcasing mechanical design skills through a competitive engineering modelling challenge.</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -81,18 +115,30 @@
 <!-- Projects Section -->
 <section id="projects" class="projects">
     <div class="container">
-        <h2  class="lead">Selected Projects</h2>
-        <nav>
+        <h2 class="lead">Selected Projects</h2>
+
+        <!-- Project index list with gear icons -->
+        <nav class="project-nav" aria-label="Jump to project">
             <ul class="highlight">
-                <li><a href="#ACWR">Automated Cassava Weeder Robot</a></li>
-                <li><a href="#PEWTU">Photo-Electrocoagulation Water Treatment Unit</a></li>
-                <li><a href="#OCFTA">Open Channel Flow Teaching Apparatus With Fabricated Supply Tank</a></li>
+                <li>
+                    <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/settings.svg" class="gear-bullet" alt="" aria-hidden="true">
+                    <a href="#ACWR">Automated Cassava Weeder Robot</a>
+                </li>
+                <li>
+                    <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/settings.svg" class="gear-bullet" alt="" aria-hidden="true">
+                    <a href="#PEWTU">Photo-Electrocoagulation Water Treatment Unit</a>
+                </li>
+                <li>
+                    <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/settings.svg" class="gear-bullet" alt="" aria-hidden="true">
+                    <a href="#OCFTA">Open Channel Flow Teaching Apparatus With Fabricated Supply Tank</a>
+                </li>
             </ul>
         </nav>
 
         <!-- Project 1 -->
         <div id="ACWR" class="project-card">
             <div class="project-content">
+                <span class="project-number">01</span>
                 <h3>Automated Cassava Weeder Robot</h3>
                 <p>
                     Designed a 4-wheel autonomous cassava weeding robot, developing the complete mechanical system 
@@ -100,41 +146,55 @@
                     weeding mechanism, protective shroud, and modular enclosures, supported by detailed 2D technical drawings 
                     and a motion animation.
                 </p>
-            </div>
-
-            <div class="project-image">
-                <div class="image-grid">
-                    <img src="images/Weeder-1.png" alt="Weeder Assembly" class="img-large">
-                    <img src="images/Weeder-2.png" alt="Weeder Frame">
-                    <img src="images/Weeder-3.png" alt="Weeder Exploded View">
+                <div class="project-tags">
+                    <span>SolidWorks</span>
+                    <span>Assembly Design</span>
+                    <span>Technical Drawing</span>
                 </div>
             </div>
+            <a href="project-acwr.html" class="project-image" title="Click to view full project">
+                <img src="images/Weeder-1.png" alt="Automated Cassava Weeder Robot preview">
+                <div class="image-overlay">
+                    <span>
+                        <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/maximize-2.svg" class="overlay-icon" alt="" aria-hidden="true">
+                        View Full Project
+                    </span>
+                </div>
+            </a>
         </div>
 
         <!-- Project 2 -->
         <div id="PEWTU" class="project-card reverse">
             <div class="project-content">
+                <span class="project-number">02</span>
                 <h3>Photo-Electrocoagulation Water Treatment Unit</h3>
                 <p>
                     Designed a compact Photo-Electrocoagulation (Photo-EC) system for treating petroleum-contaminated water. 
-                    The project integrates aluminum electrodes and UV-C treatment in a cost-effective acrylic reactor, 
+                    The project integrates aluminium electrodes and UV-C treatment in a cost-effective acrylic reactor, 
                     with provisions for foam removal, floc filtration, and safe electrical operation. The final design includes 
                     a complete CAD assembly, technical drawings, and an operational animation ready for fabrication and testing.
                 </p>
-            </div>
-
-            <div class="project-image">
-                <div class="image-grid">
-                    <img src="images/PhotoEc-2.png" alt="Electrode Layout" class="img-large">
-                    <img src="images/PhotoEc-1.png" alt="Photo-EC Unit">
-                    <img src="images/PhotoEc-3.png" alt="Electrode Layout" class="img-tall">
+                <div class="project-tags">
+                    <span>SolidWorks</span>
+                    <span>Reactor Design</span>
+                    <span>Animation</span>
                 </div>
             </div>
+            <a href="project-pewtu.html" class="project-image" title="Click to view full project">
+                <img src="images/PhotoEc-2.png" alt="Photo-Electrocoagulation Water Treatment Unit preview">
+                <div class="image-overlay">
+                    <span>
+                        <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/maximize-2.svg" class="overlay-icon" alt="" aria-hidden="true">
+                        View Full Project
+                    </span>
+                </div>
+            </a>
         </div>
 
         <!-- Project 3 -->
         <div id="OCFTA" class="project-card">
             <div class="project-content">
+                <span class="project-number">03</span>
                 <h3>Open Channel Flow Teaching Apparatus With Fabricated Supply Tank</h3>
                 <p>
                     This project involved the design of an open channel flow laboratory apparatus through reverse engineering 
@@ -142,15 +202,21 @@
                     sheet metal features and assigned AISI 304 stainless steel. The assembly was validated through static simulation 
                     under hydrostatic pressure, with detailed 2D drawings, renders, and reports produced for fabrication and documentation.
                 </p>
-            </div>
-
-            <div class="project-image">
-                <div class="image-grid">
-                    <img src="images/tank-1.jpg" alt="Rendered Tank Assembly">
-                    <img src="images/tank-2.png" alt="FEA Stress Plot">
-                    <img src="images/Rendered OCFTA.jpg" alt="Rendered open channel flow laboratory apparatus" class="img-large">
+                <div class="project-tags">
+                    <span>SolidWorks</span>
+                    <span>Sheet Metal</span>
+                    <span>FEA Simulation</span>
                 </div>
             </div>
+            <a href="project-ocfta.html" class="project-image" title="Click to view full project">
+                <img src="images/Rendered OCFTA.jpg" alt="Open Channel Flow Teaching Apparatus preview">
+                <div class="image-overlay">
+                    <span>
+                        <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/maximize-2.svg" class="overlay-icon" alt="" aria-hidden="true">
+                        View Full Project
+                    </span>
+                </div>
+            </a>
         </div>
 
     </div>
@@ -158,36 +224,50 @@
 
 <!-- Footer -->
 <footer id="contact">
-    <div class="container">
+    <div class="container footer-inner">
         <h2>Get In Touch</h2>
         <p>Ready to discuss your next mechanical design project?</p>
-
-        <p><strong>Phone:</strong> +234 808 821 2410</p>
-        <p><strong>Email:</strong> makanjuolatolulope8@gmail.com</p>
-
-        <p class="copyright">
-            © 2026 Makanjuola Tolulope
-        </p>
+        <div class="footer-contacts">
+            <a href="tel:+2348088212410" class="footer-contact-item">
+                <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/phone.svg" class="footer-icon" alt="" aria-hidden="true">
+                +234 808 821 2410
+            </a>
+            <a href="mailto:makanjuolatolulope8@gmail.com" class="footer-contact-item">
+                <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/mail.svg" class="footer-icon" alt="" aria-hidden="true">
+                makanjuolatolulope8@gmail.com
+            </a>
+            <a href="https://linkedin.com/in/makanjuola-tolulope" target="_blank" class="footer-contact-item">
+                <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/linkedin.svg" class="footer-icon" alt="" aria-hidden="true">
+                linkedin.com/in/makanjuola-tolulope
+            </a>
+        </div>
+        <p class="copyright">© 2026 Makanjuola Tolulope</p>
     </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/feather.min.js"></script>
 <script>
-    const navbar = document.querySelector('.light');
+    feather.replace();
+
+    const navbar = document.getElementById('navbar');
     let scrollTimeout;
+    let lastScroll = 0;
 
     window.addEventListener('scroll', () => {
-        // Show navbar when scrolling
-        navbar.classList.remove('hidden');
-
-        // Clear previous timeout
+        const currentScroll = window.scrollY;
+        if (currentScroll <= 60) {
+            navbar.classList.remove('hidden');
+            return;
+        }
+        if (currentScroll < lastScroll) {
+            navbar.classList.remove('hidden');
+        }
+        lastScroll = currentScroll;
         clearTimeout(scrollTimeout);
-
-        // Hide navbar after scrolling stops
         scrollTimeout = setTimeout(() => {
-            navbar.classList.add('hidden');
-        }, 1000); // time in ms before hiding
+            if (window.scrollY > 60) navbar.classList.add('hidden');
+        }, 2000);
     });
 </script>
-
 </body>
 </html>
