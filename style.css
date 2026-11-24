@@ -182,6 +182,7 @@ body {
 .cert-body { padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 4px; }
 .cert-title { font-size: 0.9rem; font-weight: 600; color: var(--primary-color); line-height: 1.4; }
 .cert-issuer { font-size: 0.78rem; color: var(--brown); font-weight: 600; }
+.cert-id { font-size: 0.7rem; color: var(--text-muted); font-family: "Roboto Mono", monospace; letter-spacing: 0.02em; }
 .cert-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.65; margin-top: 6px; }
 
 /* ── Certificate Lightbox ── */
