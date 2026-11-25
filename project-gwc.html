@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battery-Powered Grass and Weed Cutter | Makanjuola Tolulope</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="detail-nav">
+    <div class="container">
+        <a href="index.html#GWC" class="back-link">
+            <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/arrow-left.svg" alt="">
+            Back to Portfolio
+        </a>
+        <span class="detail-nav-title">Battery-Powered Grass and Weed Cutter</span>
+    </div>
+</nav>
+
+<section class="detail-hero">
+    <div class="container detail-hero-content">
+        <div class="detail-meta">
+            <span class="detail-number">PROJECT 08</span>
+            <h1>Battery-Powered Grass and Weed Cutter</h1>
+            <p class="detail-description">
+                A cordless grass and weed cutter with a compact wheeled cutting deck, designed in SOLIDWORKS and fabricated in steel.
+                The motor drives the blade directly inside a protective enclosure, an 18 V lithium-ion pack powers it, and the handle angle
+                locks through a spring-loaded Hirth-gear joint that the operator releases with a lever. Designed for a client.
+            </p>
+            <div class="detail-tags">
+                <span>SolidWorks</span>
+                <span>Assembly Design</span>
+                <span>Fabrication</span>
+                <span>Machine Design</span>
+            </div>
+        </div>
+        <div class="detail-preview">
+            <img src="images/grass-cutter-render-enclosure.png" alt="Grass cutter deck with transparent enclosure showing the battery pack">
+        </div>
+    </div>
+</section>
+
+<!-- ── Write-up: design details — remove/add this block to hide/show ── -->
+<section class="detail-section">
+    <div class="container detail-text">
+        <h2>Design details</h2>
+        <ul class="detail-list">
+            <li><strong>Cutting deck:</strong> a bolted plate frame on four castor wheels, carrying an enclosure that holds the motor and blade drive. The motor is mounted directly on the cutting head, with an arbor adaptor to the blade.</li>
+            <li><strong>Power and control:</strong> a custom 18 V Li-ion pack (5S2P, 21700 cells) and a variable-speed trigger with a safety lock.</li>
+            <li><strong>Handle:</strong> a long tubular handle with a middle grip for two-handed control.</li>
+            <li><strong>Angle adjustment:</strong> the handle pivots on a shaft with Hirth gears at both ends. A compressed spring keeps the teeth meshed so the handle holds firm, and pulling the side lever releases them to change the angle.</li>
+            <li><strong>Design load:</strong> 100 N at the handle grip, 0.45 m from the pivot, gives 45 N·m on the pivot.</li>
+        </ul>
+    </div>
+</section>
+<!-- ── End write-up ── -->
+
+<!--
+    GALLERY LAYOUT: gallery-row-fit rows (each row: every image the same height)
+    Each <img> has style="--ar: width ÷ height" of that image file, so its
+    width follows its shape. To add an image, add one more <img> with its --ar.
+-->
+<section class="detail-gallery">
+    <div class="container">
+        <h2>Project Gallery</h2>
+
+        <!-- Row 1: renders -->
+        <div class="gallery-grid gallery-row-fit">
+            <img src="images/grass-cutter-render-iso.png" style="--ar: 1.105" alt="Grass cutter full assembly render" loading="lazy">
+            <img src="images/grass-cutter-render-side.png" style="--ar: 1.164" alt="Grass cutter side view showing the handle angle" loading="lazy">
+            <img src="images/grass-cutter-render-iso-2.png" style="--ar: 0.924" alt="Grass cutter full assembly, second view" loading="lazy">
+        </div>
+
+        <!-- Row 2: fabricated machine (narrow row: only two tall photos) -->
+        <div class="gallery-grid gallery-row-fit gallery-row-narrow">
+            <img src="images/grass-cutter-fabricated-1.jpg" style="--ar: 0.752" alt="Fabricated grass and weed cutter, angled view" loading="lazy">
+            <img src="images/grass-cutter-fabricated-2.jpg" style="--ar: 0.837" alt="Fabricated grass and weed cutter, top view of the cutting deck" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<div class="detail-footer-nav">
+    <div class="container">
+        <a href="project-ocfta.html">
+            <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/arrow-left.svg" alt="">
+            Previous Project
+        </a>
+        <a href="index.html#projects">
+            <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/grid.svg" alt="">
+            All Projects
+        </a>
+        <a href="project-arm.html">
+            Next Project
+            <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/arrow-right.svg" alt="">
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

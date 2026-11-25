@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Integrated Pick-and-Place Robotic Arm | Makanjuola Tolulope</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="detail-nav">
+    <div class="container">
+        <a href="index.html#ARM" class="back-link">
+            <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/arrow-left.svg" alt="">
+            Back to Portfolio
+        </a>
+        <span class="detail-nav-title">AI-Integrated Pick-and-Place Robotic Arm</span>
+    </div>
+</nav>
+
+<section class="detail-hero">
+    <div class="container detail-hero-content">
+        <div class="detail-meta">
+            <span class="detail-number">PROJECT 01</span>
+            <h1>Low-Cost, AI-Integrated Pick-and-Place Robotic Arm</h1>
+            <p class="detail-description">
+                A desktop five-joint robotic arm that finds objects with a camera and picks them up by name, with no taught positions.
+                An overhead camera and the YOLOE open-vocabulary detector locate each object; a calibrated camera-to-table mapping, inverse
+                kinematics and smooth cubic trajectories then guide the arm. It was designed in SOLIDWORKS, 3D-printed in PLA and built from
+                locally available parts for ₦252,531.
+            </p>
+            <div class="detail-tags">
+                <span>SolidWorks</span>
+                <span>SolidWorks Motion</span>
+                <span>Python</span>
+                <span>OpenCV</span>
+                <span>YOLOE</span>
+                <span>Arduino</span>
+            </div>
+        </div>
+        <div class="detail-preview">
+            <img src="images/arm-cad-motion-reach.png" alt="Robotic arm reaching out — frame from the SOLIDWORKS motion study">
+        </div>
+    </div>
+</section>
+
+<!-- ── Motion study video — remove/add this block to hide/show ── -->
+<section class="detail-section">
+    <div class="container">
+        <h2>Motion study</h2>
+        <video class="detail-video" src="images/arm-motion.mp4" poster="images/arm-cad-motion-reach.png"
+               autoplay muted loop playsinline preload="metadata"
+               aria-label="SOLIDWORKS motion study of the robotic arm reaching for, gripping and lifting an object"></video>
+    </div>
+</section>
+<!-- ── End motion study video ── -->
+
+<!-- ── Write-up: problem, what I built, analysis — remove/add this block to hide/show ── -->
+<section class="detail-section">
+    <div class="container detail-text">
+        <h2>The problem</h2>
+        <p>
+            Industrial pick-and-place robots are expensive and are programmed for fixed positions and fixed products.
+            Small manufacturers whose products change often can't justify them.
+        </p>
+
+        <h3>What I built</h3>
+        <ul class="detail-list">
+            <li>A five-joint arm (base, shoulder, elbow, wrist pitch, wrist roll) with a two-finger gripper, driven by six servos.</li>
+            <li>Link lengths 159, 120, 50.69 and 96.5 mm, giving a reach of about 426 mm. Structural parts are FDM 3D-printed in PLA.</li>
+            <li>A laptop runs detection, camera-to-table calibration (homography), inverse kinematics and trajectory planning. An Arduino Uno with a PCA9685 driver only drives the servos, which keeps the controller simple and the software easy to test.</li>
+            <li>Open-vocabulary detection: a new object is added by typing its name, with no image collection or labelling. This replaced a fixed-class YOLOv8n model that missed several objects seen from above.</li>
+            <li>It runs as an autonomous loop: look, choose the most confident reachable object, pick it, lift it to the home pose, place it and look again, until the table is clear. All 11 automated software tests passed.</li>
+            <li>Test set-up: a wooden camera stand that I designed in SOLIDWORKS and built, holding the overhead webcam above a marked work table, with the laptop beside the arm.</li>
+        </ul>
+
+        <h3>Engineering analysis</h3>
+        <ul class="detail-list">
+            <li>Forward and inverse kinematics checked to within 10<sup>−12</sup> mm.</li>
+            <li>Factor of safety 13.3 at the wrist link and 124 at the base.</li>
+            <li>Servo torque checked against datasheets: payload limit 176 g at 5 V, against a 100 g design payload.</li>
+            <li>Cubic joint trajectories, so every joint starts and stops at zero speed.</li>
+        </ul>
+    </div>
+</section>
+<!-- ── End write-up ── -->
+
+<!-- ── Measured performance — remove/add this block to hide/show ── -->
+<section class="detail-section">
+    <div class="container">
+        <h2>Measured performance</h2>
+        <div class="results-grid">
+            <div class="result-tile"><span class="result-value">1.00</span><span class="result-label">Detection recall</span></div>
+            <div class="result-tile"><span class="result-value">0.91</span><span class="result-label">Detection precision</span></div>
+            <div class="result-tile"><span class="result-value">9.8 mm</span><span class="result-label">Camera localisation error</span></div>
+            <div class="result-tile"><span class="result-value">7.5 mm</span><span class="result-label">Arm positioning error</span></div>
+            <div class="result-tile"><span class="result-value">75%</span><span class="result-label">Pick-and-place success</span></div>
+            <div class="result-tile"><span class="result-value">≈ 6 mm</span><span class="result-label">Repeatability (ISO 9283 method)</span></div>
+            <div class="result-tile"><span class="result-value">23 s</span><span class="result-label">Cycle time</span></div>
+        </div>
+        <div class="detail-text">
+            <p style="margin-top: 22px;">
+                Accuracy is limited by the open-loop hobby servos, not by the AI, the structure or the maths. The detector found every
+                object, the parts deflect less than 0.5 mm, and the about 6 mm scatter matches roughly 1° of servo dead band
+                (1° at 250 mm moves the fingertip 4.4 mm). The next step would be servos with position feedback.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- ── End measured performance ── -->
+
+<!-- ── Assembly drawing — remove/add this block to hide/show ── -->
+<section class="detail-section">
+    <div class="container">
+        <h2>Assembly drawing</h2>
+        <a class="detail-drawing" href="images/arm-assembly-drawing.png" target="_blank" rel="noopener" title="Open the drawing full size">
+            <img src="images/arm-assembly-drawing.png" alt="A3 assembly drawing of the robotic arm with 24 numbered parts and parts list (IRA-ASM-0001-A)" loading="lazy">
+        </a>
+        <p class="detail-drawing-hint">Click the drawing to open it full size.</p>
+    </div>
+</section>
+<!-- ── End assembly drawing ── -->
+
+<!--
+    GALLERY LAYOUT: gallery-row-fit rows (each row: every image the same height)
+    Each <img> has style="--ar: width ÷ height" of that image file, so its
+    width follows its shape. To add an image, add one more <img> with its --ar.
+-->
+<section class="detail-gallery">
+    <div class="container">
+        <h2>Project Gallery</h2>
+
+        <!-- Row 1: motion study frames and the rendered model -->
+        <div class="gallery-grid gallery-row-fit">
+            <img src="images/arm-cad-motion-approach.png" style="--ar: 1.191" alt="Motion study frame: arm lowering the gripper towards the object" loading="lazy">
+            <img src="images/arm-cad-motion-grip.png" style="--ar: 1.231" alt="Motion study frame: gripper open, about to grip" loading="lazy">
+            <img src="images/arm-render.jpg" style="--ar: 0.799" alt="Rendered CAD model of the complete robotic arm" loading="lazy">
+        </div>
+
+        <!-- Row 2: gripper mechanism and FEA -->
+        <div class="gallery-grid gallery-row-fit">
+            <img src="images/arm-cad-gripper.png" style="--ar: 1.274" alt="Gripper mechanism: an SG90 servo drives two spur gears that close two linked fingers symmetrically" loading="lazy">
+            <img src="images/arm-fea-wrist-link.png" style="--ar: 1.656" alt="SOLIDWORKS Simulation of the wrist link: peak von Mises stress about 3.0 MPa, factor of safety 13.3" loading="lazy">
+            <img src="images/arm-fea-base.png" style="--ar: 1.711" alt="SOLIDWORKS Simulation of the base: peak stress about 0.32 MPa, factor of safety 124" loading="lazy">
+        </div>
+        <p class="gallery-note">
+            Gripper: an SG90 servo drives two spur gears that close two linked fingers symmetrically.
+            FEA (SOLIDWORKS Simulation): wrist link peak von Mises stress about 3.0 MPa against 40 MPa PLA yield, factor of safety 13.3;
+            base peak stress about 0.32 MPa, factor of safety 124.
+        </p>
+
+        <!-- Row 3: full cell and camera stand (CAD), the built arm (photo), and the overhead camera view -->
+        <div class="gallery-grid gallery-row-fit">
+            <img src="images/arm-cad-full-assembly.png" style="--ar: 0.844" alt="CAD model of the whole cell: arm, work table on castors, laptop shelf and camera mast" loading="lazy">
+            <img src="images/arm-stand-cad.png" style="--ar: 0.759" alt="CAD model of the wooden camera stand" loading="lazy">
+            <img src="images/arm-fabricated.jpg" style="--ar: 1.349" alt="The built robotic arm, 3D-printed in orange PLA, on the work table" loading="lazy">
+            <img src="images/arm-detection.jpg" style="--ar: 1.699" alt="Overhead camera view of the workspace: the detector has found a bottle, a roll of tape and a marker pen, each marked with its position and CAN PICK" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<div class="detail-footer-nav">
+    <div class="container">
+        <a href="project-gwc.html">
+            <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/arrow-left.svg" alt="">
+            Previous Project
+        </a>
+        <a href="index.html#projects">
+            <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/grid.svg" alt="">
+            All Projects
+        </a>
+        <a href="project-imw.html">
+            Next Project
+            <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/arrow-right.svg" alt="">
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
