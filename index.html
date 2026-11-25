@@ -184,6 +184,10 @@
             <ul class="highlight">
                 <li>
                     <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/settings.svg" class="gear-bullet" alt="" aria-hidden="true">
+                    <a href="#ARM">AI-Integrated Pick-and-Place Robotic Arm</a>
+                </li>
+                <li>
+                    <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/settings.svg" class="gear-bullet" alt="" aria-hidden="true">
                     <a href="#IMW">Incinerator for Medical Waste</a>
                 </li>
                 <li>
@@ -206,14 +210,55 @@
                     <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/settings.svg" class="gear-bullet" alt="" aria-hidden="true">
                     <a href="#OCFTA">Open Channel Flow Teaching Apparatus With Fabricated Supply Tank</a>
                 </li>
+                <li>
+                    <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/settings.svg" class="gear-bullet" alt="" aria-hidden="true">
+                    <a href="#GWC">Battery-Powered Grass and Weed Cutter</a>
+                </li>
             </ul>
         </nav>
 
-        <!-- Project 1 — Incinerator for Medical Waste -->
-        <!-- Slides: portrait, portrait, portrait — all centred with slide-portrait -->
-        <div id="IMW" class="project-card">
+        <!-- Project 1 — AI-Integrated Pick-and-Place Robotic Arm -->
+        <!-- Slides: motion frame, assembly drawing, motion frame, full assembly CAD, then the two photos -->
+        <div id="ARM" class="project-card">
             <div class="project-content">
                 <span class="project-number">01</span>
+                <h3>Low-Cost, AI-Integrated Pick-and-Place Robotic Arm</h3>
+                <p>
+                    A desktop five-joint robotic arm that finds objects with a camera and picks them up by name, with no taught positions.
+                    An overhead camera and the YOLOE open-vocabulary detector locate each object; a calibrated camera-to-table mapping, inverse
+                    kinematics and smooth cubic trajectories then guide the arm. It was designed in SOLIDWORKS, 3D-printed in PLA and built from
+                    locally available parts for ₦252,531.
+                </p>
+                <div class="project-tags">
+                    <span>SolidWorks</span>
+                    <span>Python</span>
+                    <span>OpenCV</span>
+                    <span>Arduino</span>
+                </div>
+            </div>
+            <a href="project-arm.html" class="project-image" title="Click to view full project">
+                <div class="slideshow">
+                    <img src="images/arm-cad-motion-reach.png" class="slide slide-portrait" alt="Robotic arm reaching out, SOLIDWORKS motion study">
+                    <img src="images/arm-assembly-drawing.png" class="slide slide-portrait" alt="Robotic arm assembly drawing with parts list" loading="lazy">
+                    <img src="images/arm-cad-motion-grip.png" class="slide" alt="Robotic arm gripper open, about to grip" loading="lazy">
+                    <img src="images/arm-cad-full-assembly.png" class="slide slide-portrait" alt="CAD model of the whole robotic arm cell with camera mast" loading="lazy">
+                    <img src="images/arm-fabricated.jpg" class="slide" alt="The built robotic arm, 3D-printed in orange PLA" loading="lazy">
+                    <img src="images/arm-full-setup.jpg" class="slide slide-portrait" alt="The complete built system with camera stand and laptop" loading="lazy">
+                </div>
+                <div class="image-overlay">
+                    <span>
+                        <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/maximize-2.svg" class="overlay-icon" alt="" aria-hidden="true">
+                        View Full Project
+                    </span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Project 2 — Incinerator for Medical Waste -->
+        <!-- Slides: portrait, portrait, portrait — all centred with slide-portrait -->
+        <div id="IMW" class="project-card reverse">
+            <div class="project-content">
+                <span class="project-number">02</span>
                 <h3>Incinerator for Medical Waste</h3>
                 <p>
                     A mechanically designed, LPG-assisted medical waste incinerator developed for small- and medium-scale 
@@ -244,11 +289,11 @@
             </a>
         </div>
 
-        <!-- Project 2 — Briquette Press -->
+        <!-- Project 3 — Briquette Press -->
         <!-- Slides: portrait, portrait, technical drawing — portraits centred, drawing covers -->
-        <div id="BP" class="project-card reverse">
+        <div id="BP" class="project-card">
             <div class="project-content">
-                <span class="project-number">02</span>
+                <span class="project-number">03</span>
                 <h3>Briquette Press</h3>
                 <p>
                     Designed a hand-operated hydraulic press that compacts biomass waste (sawdust, rice husk, coconut husk) 
@@ -278,11 +323,11 @@
             </a>
         </div>
 
-        <!-- Project 3 — 15 Litres Bio-Ethanol Reactor -->
+        <!-- Project 4 — 15 Litres Bio-Ethanol Reactor -->
         <!-- Slides: technical drawing, portrait render, technical drawing — portrait centred -->
-        <div id="BER" class="project-card">
+        <div id="BER" class="project-card reverse">
             <div class="project-content">
-                <span class="project-number">03</span>
+                <span class="project-number">04</span>
                 <h3>15 Litres Bio-Ethanol Reactor</h3>
                 <p>
                     Designed a 15-litre stainless steel batch stirred tank bioreactor (STBR) for bio-ethanol production 
@@ -313,11 +358,11 @@
             </a>
         </div>
 
-        <!-- Project 4 — Automated Cassava Weeder Robot -->
+        <!-- Project 5 — Automated Cassava Weeder Robot -->
         <!-- Slides: portrait, portrait, portrait — all centred -->
-        <div id="ACWR" class="project-card reverse">
+        <div id="ACWR" class="project-card">
             <div class="project-content">
-                <span class="project-number">04</span>
+                <span class="project-number">05</span>
                 <h3>Automated Cassava Weeder Robot</h3>
                 <p>
                     Designed a 4-wheel autonomous cassava weeding robot, developing the complete mechanical system 
@@ -346,11 +391,11 @@
             </a>
         </div>
 
-        <!-- Project 5 — Photo-Electrocoagulation Water Treatment Unit -->
+        <!-- Project 6 — Photo-Electrocoagulation Water Treatment Unit -->
         <!-- Slides: landscape renders — cover works well -->
-        <div id="PEWTU" class="project-card">
+        <div id="PEWTU" class="project-card reverse">
             <div class="project-content">
-                <span class="project-number">05</span>
+                <span class="project-number">06</span>
                 <h3>Photo-Electrocoagulation Water Treatment Unit</h3>
                 <p>
                     Designed a compact Photo-Electrocoagulation (Photo-EC) system for treating petroleum-contaminated water. 
@@ -379,11 +424,11 @@
             </a>
         </div>
 
-        <!-- Project 6 — Open Channel Flow Teaching Apparatus -->
+        <!-- Project 7 — Open Channel Flow Teaching Apparatus -->
         <!-- Slides: landscape render, portrait render, landscape FEA -->
-        <div id="OCFTA" class="project-card reverse">
+        <div id="OCFTA" class="project-card">
             <div class="project-content">
-                <span class="project-number">06</span>
+                <span class="project-number">07</span>
                 <h3>Open Channel Flow Teaching Apparatus With Fabricated Supply Tank</h3>
                 <p>
                     This project involved the design of an open channel flow laboratory apparatus through reverse engineering 
@@ -402,6 +447,41 @@
                     <img src="images/Rendered OCFTA.jpg" class="slide" alt="Open Channel Flow apparatus render">
                     <img src="images/tank-1.jpg" class="slide slide-portrait" alt="Supply tank render">
                     <img src="images/tank-2.png" class="slide" alt="FEA stress plot">
+                </div>
+                <div class="image-overlay">
+                    <span>
+                        <img src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/icons/maximize-2.svg" class="overlay-icon" alt="" aria-hidden="true">
+                        View Full Project
+                    </span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Project 8 — Battery-Powered Grass and Weed Cutter -->
+        <!-- Slides: enclosure render, full assembly, side view, then the two photos -->
+        <div id="GWC" class="project-card reverse">
+            <div class="project-content">
+                <span class="project-number">08</span>
+                <h3>Battery-Powered Grass and Weed Cutter</h3>
+                <p>
+                    A cordless grass and weed cutter with a compact wheeled cutting deck, designed in SOLIDWORKS and fabricated in steel.
+                    The motor drives the blade directly inside a protective enclosure, an 18 V lithium-ion pack powers it, and the handle angle
+                    locks through a spring-loaded Hirth-gear joint that the operator releases with a lever. Designed for a client.
+                </p>
+                <div class="project-tags">
+                    <span>SolidWorks</span>
+                    <span>Assembly Design</span>
+                    <span>Fabrication</span>
+                    <span>Machine Design</span>
+                </div>
+            </div>
+            <a href="project-gwc.html" class="project-image" title="Click to view full project">
+                <div class="slideshow">
+                    <img src="images/grass-cutter-render-enclosure.png" class="slide" alt="Grass cutter deck with transparent enclosure showing the battery pack">
+                    <img src="images/grass-cutter-render-iso.png" class="slide slide-portrait" alt="Grass cutter full assembly render" loading="lazy">
+                    <img src="images/grass-cutter-render-side.png" class="slide slide-portrait" alt="Grass cutter side view showing the handle angle" loading="lazy">
+                    <img src="images/grass-cutter-fabricated-1.jpg" class="slide slide-portrait" alt="Fabricated grass and weed cutter, angled view" loading="lazy">
+                    <img src="images/grass-cutter-fabricated-2.jpg" class="slide slide-portrait" alt="Fabricated grass and weed cutter, top view" loading="lazy">
                 </div>
                 <div class="image-overlay">
                     <span>
