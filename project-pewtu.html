@@ -39,22 +39,23 @@
             </div>
         </div>
         <div class="detail-preview">
-            <img src="images/PhotoEc-2.png" alt="Photo-EC Unit — electrode layout">
+            <img src="images/photoec-2.png" alt="Photo-EC Unit — electrode layout">
         </div>
     </div>
 </section>
 
 <!--
-    GALLERY LAYOUT: 3 landscape/mixed renders — equal-height row
-    Layout class: gallery-row-equal
+    GALLERY LAYOUT: gallery-row-fit (every image the same height)
+    Each <img> has style="--ar: width ÷ height" of that image file, so its
+    width follows its shape. To add an image, add one more <img> with its --ar.
 -->
 <section class="detail-gallery">
     <div class="container">
         <h2>Project Gallery</h2>
-        <div class="gallery-grid gallery-row-equal">
-            <img src="images/PhotoEc-2.png" alt="Photo-EC — electrode layout render">
-            <img src="images/PhotoEc-1.png" alt="Photo-EC — unit assembly render">
-            <img src="images/PhotoEc-3.png" alt="Photo-EC — electrode detail view">
+        <div class="gallery-grid gallery-row-fit">
+            <img src="images/photoec-2.png" style="--ar: 1.386" alt="Photo-EC — electrode layout render" loading="lazy">
+            <img src="images/photoec-1.png" style="--ar: 1.179" alt="Photo-EC — unit assembly render" loading="lazy">
+            <img src="images/photoec-3.png" style="--ar: 0.877" alt="Photo-EC — electrode detail view" loading="lazy">
         </div>
     </div>
 </section>

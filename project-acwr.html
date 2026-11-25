@@ -39,22 +39,23 @@
             </div>
         </div>
         <div class="detail-preview">
-            <img src="images/Weeder-1.png" alt="Automated Cassava Weeder Robot — full assembly">
+            <img src="images/weeder-1.png" alt="Automated Cassava Weeder Robot — full assembly">
         </div>
     </div>
 </section>
 
 <!--
-    GALLERY LAYOUT: 3 portrait renders — equal-height row
-    Layout class: gallery-row-equal
+    GALLERY LAYOUT: gallery-row-fit (every image the same height)
+    Each <img> has style="--ar: width ÷ height" of that image file, so its
+    width follows its shape. To add an image, add one more <img> with its --ar.
 -->
 <section class="detail-gallery">
     <div class="container">
         <h2>Project Gallery</h2>
-        <div class="gallery-grid gallery-row-equal">
-            <img src="images/Weeder-1.png" alt="Weeder Robot — full assembly render">
-            <img src="images/Weeder-2.png" alt="Weeder Robot — frame detail">
-            <img src="images/Weeder-3.png" alt="Weeder Robot — exploded view">
+        <div class="gallery-grid gallery-row-fit">
+            <img src="images/weeder-1.png" style="--ar: 1.343" alt="Weeder Robot — full assembly render" loading="lazy">
+            <img src="images/weeder-2.png" style="--ar: 1.398" alt="Weeder Robot — frame detail" loading="lazy">
+            <img src="images/weeder-3.png" style="--ar: 1.340" alt="Weeder Robot — exploded view" loading="lazy">
         </div>
     </div>
 </section>
