@@ -47,22 +47,18 @@
 </section>
 
 <!--
-    GALLERY LAYOUT: 2 technical drawings stacked + 1 portrait render
-    Rule: drawings stacked in left column; portrait on right at
-          67% of the combined left-column height (within 60–75% spec).
-    Layout class: gallery-row-2drawing-1portrait
-
-    Left column:  Reactor-1 (assembly + section drawing, A3 landscape)
-                  Reactor-3 (exploded view + BOM, A3 landscape)
-    Right column: Reactor-2 (portrait render of assembled reactor)
+    GALLERY LAYOUT: gallery-row-fit (one row, every image the same height)
+    Each <img> has style="--ar: width ÷ height" of that image file, so its
+    width follows its shape. To add an image, add one more <img> with its --ar.
 -->
 <section class="detail-gallery">
     <div class="container">
         <h2>Project Gallery</h2>
-        <div class="gallery-grid gallery-row-equal">
-            <img src="images/Reactor-1.png" alt="Bio-Ethanol Reactor — assembly and section drawing">
-            <img src="images/Reactor-2.png" alt="Bio-Ethanol Reactor — rendered assembly">
-            <img src="images/Reactor-3.png" alt="Bio-Ethanol Reactor — exploded view with Bill of Materials">
+        <div class="gallery-grid gallery-row-fit">
+            <img src="images/Reactor-1.png" style="--ar: 1.386" alt="Bio-Ethanol Reactor — assembly and section drawing">
+            <img src="images/Reactor-2.png" style="--ar: 0.619" alt="Bio-Ethanol Reactor — rendered assembly">
+            <img src="images/Reactor-3.png" style="--ar: 1.388" alt="Bio-Ethanol Reactor — exploded view with Bill of Materials">
+            <img src="images/ber-fabricated.jpg" style="--ar: 0.741" alt="Fabricated bio-ethanol reactor with geared motor stirrer, bolted lid and control panel" loading="lazy">
         </div>
     </div>
 </section>

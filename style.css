@@ -469,6 +469,12 @@ footer h2 { font-size: 1.75rem; font-weight: 700; color: var(--white); margin-bo
  *      (i.e. each drawing is ~half, portrait is ~67% of total).
  *      Used for: BER (Bio-Ethanol Reactor)
  *
+ *  .gallery-row-fit
+ *    → One row, every image exactly the same height; each image's
+ *      width follows its own shape, so nothing is stretched or padded.
+ *      Set style="--ar: width ÷ height" on each <img>.
+ *      Used for: IMW, BP, BER (renders, drawings and fabrication photo)
+ *
  *  All images in every layout get:
  *    width: 100%, object-fit: contain (no cropping), white bg
  *  so the full drawing or render is always visible.
@@ -563,6 +569,23 @@ footer h2 { font-size: 1.75rem; font-weight: 700; color: var(--white); margin-bo
     width: 100%;
 }
 
+/* ──────────────────────────────────────────────
+   LAYOUT 4: fit row (same height, natural widths)
+   Each image grows in proportion to its aspect ratio (--ar),
+   which makes every image in the row come out the same height.
+   ────────────────────────────────────────────── */
+.gallery-row-fit {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+.gallery-row-fit img {
+    flex: var(--ar) 1 0;      /* width share = the image's own width ÷ height */
+    min-width: 0;
+    height: auto;
+    aspect-ratio: var(--ar);  /* keeps the exact shape: no stretching, no padding */
+}
+
 /* ── Prev/Next navigation ── */
 .detail-footer-nav { padding: 40px 0; background: var(--bg-light); border-top: 1px solid var(--border-color); }
 .detail-footer-nav .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
@@ -585,7 +608,9 @@ footer h2 { font-size: 1.75rem; font-weight: 700; color: var(--white); margin-bo
     /* All gallery layouts collapse to a vertical stack on mobile */
     .gallery-row-equal,
     .gallery-row-2portrait-1drawing,
-    .gallery-row-2drawing-1portrait { flex-direction: column; }
+    .gallery-row-2drawing-1portrait,
+    .gallery-row-fit { flex-direction: column; }
+    .gallery-row-fit img { flex: none; width: 100%; }   /* full width, natural height */
 
     .gallery-row-equal img,
     .gallery-row-2portrait-1drawing .gallery-portrait,
