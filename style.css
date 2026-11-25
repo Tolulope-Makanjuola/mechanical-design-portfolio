@@ -158,7 +158,30 @@ body {
 }
 .certificates h2 { font-size: 1.75rem; font-weight: 700; color: var(--primary-color); margin-bottom: 10px; }
 .section-intro { color: var(--text-muted); font-size: 0.93rem; margin-bottom: 36px; }
-.cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+/* Cards are centred, so two visible certificates sit in the middle of the row.
+   Three per row on desktop, two on tablets, one on phones. */
+.cert-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.cert-grid .cert-card { flex: 0 1 calc((100% - 40px) / 3); }
+@media (max-width: 900px) { .cert-grid .cert-card { flex-basis: calc((100% - 20px) / 2); } }
+@media (max-width: 768px) { .cert-grid .cert-card { flex-basis: 100%; } }
+/* Show all / show fewer: cards marked cert-extra are hidden while the grid is collapsed */
+.cert-grid.collapsed .cert-extra { display: none; }
+.cert-toggle {
+    display: block;
+    margin: 28px auto 0;
+    padding: 10px 22px;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--brown);
+    background: var(--brown-light);
+    border: 1px solid var(--brown-mid);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.cert-toggle:hover { background: var(--brown); color: #fff; }
+.cert-toggle[hidden] { display: none; }
 .cert-card {
     background: var(--white);
     border: 1px solid var(--border-color);
@@ -182,6 +205,7 @@ body {
 .cert-body { padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 4px; }
 .cert-title { font-size: 0.9rem; font-weight: 600; color: var(--primary-color); line-height: 1.4; }
 .cert-issuer { font-size: 0.78rem; color: var(--brown); font-weight: 600; }
+.cert-id { font-size: 0.7rem; color: var(--text-muted); font-family: "Roboto Mono", monospace; letter-spacing: 0.02em; }
 .cert-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.65; margin-top: 6px; }
 
 /* ── Certificate Lightbox ── */
