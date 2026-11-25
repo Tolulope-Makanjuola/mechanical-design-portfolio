@@ -366,7 +366,9 @@ body {
 footer { padding: 70px 0 40px; background: var(--primary-color); color: rgba(255,255,255,0.9); }
 .footer-inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 36px; }
 footer h2 { font-size: 1.75rem; font-weight: 700; color: var(--white); margin-bottom: 6px; }
-.footer-inner > p { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+.footer-inner > p, .footer-heading p { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+/* Heading and the line under it stay together as one block */
+.footer-heading h2 { margin-bottom: 10px; }
 .footer-contacts { display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 460px; }
 .footer-contact-item {
     display: flex; align-items: center; gap: 14px;
@@ -376,9 +378,16 @@ footer h2 { font-size: 1.75rem; font-weight: 700; color: var(--white); margin-bo
     color: rgba(255,255,255,0.85); font-size: 0.88rem;
     transition: background 0.2s, border-color 0.2s;
 }
-.footer-contact-item:hover { background: rgba(255,255,255,0.13); border-color: rgba(255,255,255,0.25); color: var(--white); }
+.footer-contact-item:hover { background: rgba(255,255,255,0.13); border-color: var(--brown-mid); color: var(--white); }
 .footer-icon { width: 20px; height: 20px; filter: invert(1); flex-shrink: 0; opacity: 0.8; }
 .copyright { font-size: 0.75rem; color: rgba(255,255,255,0.35); margin-top: 6px; }
+/* "Back to top" link, sits just under the copyright line */
+.back-to-top {
+    margin-top: -26px;
+    font-size: 0.8rem; color: rgba(255,255,255,0.55); text-decoration: none;
+    transition: color 0.2s;
+}
+.back-to-top:hover { color: var(--brown-mid); }
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
