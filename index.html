@@ -98,7 +98,7 @@
     <div class="container">
         <h2>Certificates &amp; Training</h2>
         <p class="section-intro">Formal credentials and professional development in CAD and engineering simulation.</p>
-        <div class="cert-grid">
+        <div class="cert-grid collapsed" id="cert-grid">
 
             <!-- ── CSWP certificate card — remove/add this block to hide/show ── -->
             <div class="cert-card">
@@ -128,9 +128,12 @@
             </div>
             <!-- ── End CSWA-Simulation certificate card ── -->
 
-            <div class="cert-card">
+            <!-- ── Extra certificates: cards with class "cert-extra" stay hidden until
+                 the visitor taps "Show all certificates". Add or remove "cert-extra"
+                 on a card to choose whether it shows straight away. ── -->
+            <div class="cert-card cert-extra">
                 <div class="cert-image-wrap">
-                    <img src="images/cert-cswa.jpg" alt="CSWA Certificate">
+                    <img src="images/cert-cswa.jpg" alt="CSWA Certificate" loading="lazy">
                 </div>
                 <div class="cert-body">
                     <p class="cert-title">Certified SolidWorks Associate (CSWA)</p>
@@ -138,9 +141,9 @@
                     <p class="cert-desc">Industry-recognised credential validating proficiency in SolidWorks 3D CAD modelling, part design, assembly creation, and engineering drawing interpretation.</p>
                 </div>
             </div>
-            <div class="cert-card">
+            <div class="cert-card cert-extra">
                 <div class="cert-image-wrap">
-                    <img src="images/cert-aakruti.jpg" alt="Aakruti Innovation Competition Certificate">
+                    <img src="images/cert-aakruti.jpg" alt="Aakruti Innovation Competition Certificate" loading="lazy">
                 </div>
                 <div class="cert-body">
                     <p class="cert-title">Certificate of Participation — Aakruti Innovation Competition</p>
@@ -148,7 +151,15 @@
                     <p class="cert-desc">Participated in the Aakruti international CAD innovation competition, showcasing mechanical design skills through a competitive engineering modelling challenge.</p>
                 </div>
             </div>
+            <!-- ── End extra certificates ── -->
         </div>
+
+        <!-- ── Show all / show fewer button — remove this block (and the "collapsed" class
+             on cert-grid) to show every certificate all the time ── -->
+        <button type="button" class="cert-toggle" id="cert-toggle" aria-controls="cert-grid" aria-expanded="false">
+            Show all certificates (<span id="cert-count"></span>)
+        </button>
+        <!-- ── End show all button ── -->
     </div>
 </section>
 
@@ -451,6 +462,26 @@ function closeLightbox() { lightbox.classList.remove('active'); lbImg.src = ''; 
 lbClose.addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+/* ── Certificates: show all / show fewer ── */
+const certGrid   = document.getElementById('cert-grid');
+const certToggle = document.getElementById('cert-toggle');
+if (certGrid && certToggle) {
+    const total = certGrid.querySelectorAll('.cert-card').length;
+    if (!certGrid.querySelector('.cert-extra')) {
+        certToggle.hidden = true;            // nothing to hide, so no button
+    }
+    certToggle.addEventListener('click', () => {
+        const opening = certGrid.classList.contains('collapsed');
+        certGrid.classList.toggle('collapsed');
+        certToggle.setAttribute('aria-expanded', opening);
+        certToggle.textContent = opening ? 'Show fewer certificates'
+                                       : 'Show all certificates (' + total + ')';
+        // When closing, bring the section heading back into view on phones
+        if (!opening) document.getElementById('certificates').scrollIntoView({ behavior: 'smooth' });
+    });
+    document.getElementById('cert-count').textContent = total;
+}
 
 /* ── Slideshow — equal screen time, no visible snap-back ──────────────
  *
