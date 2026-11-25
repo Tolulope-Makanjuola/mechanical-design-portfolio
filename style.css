@@ -369,13 +369,6 @@ footer h2 { font-size: 1.75rem; font-weight: 700; color: var(--white); margin-bo
 .footer-inner > p, .footer-heading p { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
 /* Heading and the line under it stay together as one block */
 .footer-heading h2 { margin-bottom: 10px; }
-/* Short brown line above "Get In Touch", to match the brown accents on the rest of the page */
-.footer-heading::before {
-    content: ''; display: block;
-    width: 48px; height: 3px; border-radius: 2px;
-    background: var(--brown-mid);
-    margin: 0 auto 20px;
-}
 .footer-contacts { display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 460px; }
 .footer-contact-item {
     display: flex; align-items: center; gap: 14px;
