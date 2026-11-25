@@ -39,22 +39,23 @@
             </div>
         </div>
         <div class="detail-preview">
-            <img src="images/Rendered OCFTA.jpg" alt="Open Channel Flow Teaching Apparatus — rendered assembly">
+            <img src="images/ocfta-render.jpg" alt="Open Channel Flow Teaching Apparatus — rendered assembly">
         </div>
     </div>
 </section>
 
 <!--
-    GALLERY LAYOUT: 3 images (landscape render, portrait render, landscape FEA) — equal-height row
-    Layout class: gallery-row-equal
+    GALLERY LAYOUT: gallery-row-fit (every image the same height)
+    Each <img> has style="--ar: width ÷ height" of that image file, so its
+    width follows its shape. To add an image, add one more <img> with its --ar.
 -->
 <section class="detail-gallery">
     <div class="container">
         <h2>Project Gallery</h2>
-        <div class="gallery-grid gallery-row-equal">
-            <img src="images/Rendered OCFTA.jpg" alt="Open Channel Flow — full apparatus render">
-            <img src="images/tank-1.jpg"          alt="Supply tank — rendered assembly">
-            <img src="images/tank-2.png"           alt="FEA stress plot — hydrostatic pressure validation">
+        <div class="gallery-grid gallery-row-fit">
+            <img src="images/ocfta-render.jpg" style="--ar: 1.778" alt="Open Channel Flow — full apparatus render" loading="lazy">
+            <img src="images/tank-1.jpg" style="--ar: 1.778" alt="Supply tank — rendered assembly" loading="lazy">
+            <img src="images/tank-2.png" style="--ar: 1.876" alt="FEA stress plot — hydrostatic pressure validation" loading="lazy">
         </div>
     </div>
 </section>
