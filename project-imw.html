@@ -45,18 +45,18 @@
 </section>
 
 <!--
-    GALLERY LAYOUT: 2 portrait renders + 1 technical drawing
-    Rule: portrait height = 122% of drawing height.
-    Layout class: gallery-row-2portrait-1drawing
-    Column order: portrait | drawing | portrait
+    GALLERY LAYOUT: gallery-row-fit (one row, every image the same height)
+    Each <img> has style="--ar: width ÷ height" of that image file, so its
+    width follows its shape. To add an image, add one more <img> with its --ar.
 -->
 <section class="detail-gallery">
     <div class="container">
         <h2>Project Gallery</h2>
-        <div class="gallery-grid gallery-row-2portrait-1drawing">
-            <img src="images/Incinerator-2.png" class="gallery-portrait" alt="Incinerator with transparent view">
-            <img src="images/Incinerator-3.png" class="gallery-drawing"  alt="Incinerator — structural member technical drawing">
-            <img src="images/Incinerator-4.png" class="gallery-portrait" alt="Incinerator with door open">
+        <div class="gallery-grid gallery-row-fit">
+            <img src="images/Incinerator-2.png" style="--ar: 1.033" alt="Incinerator with transparent view">
+            <img src="images/Incinerator-3.png" style="--ar: 1.387" alt="Incinerator — structural member technical drawing">
+            <img src="images/Incinerator-4.png" style="--ar: 1.070" alt="Incinerator with door open">
+            <img src="images/imw-fabricated.jpg" style="--ar: 0.776" alt="Fabricated medical waste incinerator, painted green, with chimney, loading door and ash drawer" loading="lazy">
         </div>
     </div>
 </section>

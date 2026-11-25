@@ -43,37 +43,19 @@
     </div>
 </section>
 
-<!-- ── From CAD to reality — remove/add this block to hide/show ── -->
-<section class="cad-reality">
-    <div class="container">
-        <h2>From CAD to reality</h2>
-        <div class="cad-reality-grid">
-            <figure>
-                <img src="images/Briquette-1.png" alt="Briquette Press — isometric SolidWorks render">
-                <figcaption><strong>CAD model:</strong> the press assembly rendered in SolidWorks.</figcaption>
-            </figure>
-            <figure>
-                <img src="images/bp-fabricated.jpg" alt="Fabricated briquette press with green welded frame, red bottle jack, return springs and collection tray" loading="lazy">
-                <figcaption><strong>Built:</strong> Fabricated press: welded box-section frame, bottle-jack drive with return springs, mould and collection tray.</figcaption>
-            </figure>
-        </div>
-    </div>
-</section>
-<!-- ── End From CAD to reality ── -->
-
 <!--
-    GALLERY LAYOUT: 2 portrait renders + 1 technical drawing
-    Rule: portrait height = 122% of drawing height.
-    Layout class: gallery-row-2portrait-1drawing
-    Column order: portrait | drawing | portrait
+    GALLERY LAYOUT: gallery-row-fit (one row, every image the same height)
+    Each <img> has style="--ar: width ÷ height" of that image file, so its
+    width follows its shape. To add an image, add one more <img> with its --ar.
 -->
 <section class="detail-gallery">
     <div class="container">
         <h2>Project Gallery</h2>
-        <div class="gallery-grid gallery-row-2portrait-1drawing">
-            <img src="images/Briquette-1.png" class="gallery-portrait" alt="Briquette Press — isometric view">
-            <img src="images/Briquette-2.png" class="gallery-drawing"  alt="Briquette Press — exploded drawing with BOM">
-            <img src="images/Briquette-3.png" class="gallery-portrait" alt="Briquette Press — shaded render">
+        <div class="gallery-grid gallery-row-fit">
+            <img src="images/Briquette-1.png" style="--ar: 0.687" alt="Briquette Press — isometric view">
+            <img src="images/Briquette-2.png" style="--ar: 0.595" alt="Briquette Press — shaded render">
+            <img src="images/Briquette-3.png" style="--ar: 1.383" alt="Briquette Press — exploded drawing with BOM">
+            <img src="images/bp-fabricated.jpg" style="--ar: 0.741" alt="Fabricated briquette press with welded frame, bottle jack, return springs and collection tray" loading="lazy">
         </div>
     </div>
 </section>
