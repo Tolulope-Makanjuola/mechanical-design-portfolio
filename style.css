@@ -96,6 +96,7 @@ body {
     margin-bottom: 14px;
 }
 .about p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
+.about p + p { margin-top: 14px; }   /* space between back-to-back paragraphs */
 .skills { margin-top: 20px; }
 .skills span {
     display: inline-block;
