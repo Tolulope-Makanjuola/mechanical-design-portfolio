@@ -96,6 +96,7 @@ body {
     margin-bottom: 14px;
 }
 .about p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
+.about p + p { margin-top: 14px; }   /* space between back-to-back paragraphs */
 .skills { margin-top: 20px; }
 .skills span {
     display: inline-block;
@@ -166,6 +167,7 @@ body {
 @media (max-width: 768px) { .cert-grid .cert-card { flex-basis: 100%; } }
 /* Show all / show fewer: cards marked cert-extra are hidden while the grid is collapsed */
 .cert-grid.collapsed .cert-extra { display: none; }
+.cert-grid.collapsed { column-gap: 64px; }   /* wider space between the two cards shown by default */
 .cert-toggle {
     display: block;
     margin: 28px auto 0;
