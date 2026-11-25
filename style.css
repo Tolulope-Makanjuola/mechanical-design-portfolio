@@ -663,3 +663,31 @@ footer h2 { font-size: 1.75rem; font-weight: 700; color: var(--white); margin-bo
         height: auto !important;
     }
 }
+
+/* ── Interactive 3D model (project-arm.html) ── */
+.arm3d { display: grid; grid-template-columns: minmax(0, 1fr) 320px; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; margin-top: 18px; background: var(--white); }
+.arm3d-view { position: relative; height: 520px; background: var(--white); touch-action: none; }
+.arm3d.is-on .arm3d-view { cursor: grab; }
+.arm3d-view canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.arm3d-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 24px; }
+.arm3d.is-on .arm3d-poster, .arm3d.is-on .arm3d-load { display: none; }
+.arm3d-load { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); padding: 12px 22px; border: 0; border-radius: 6px; background: var(--brown); color: #fff; font: 600 0.95rem 'Inter', sans-serif; cursor: pointer; }
+.arm3d-load:hover { background: var(--primary-color); }
+#status { position: absolute; top: 50%; left: 0; right: 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
+.arm3d-panel { padding: 18px 20px; border-left: 1px solid var(--border-color); background: var(--bg-light); display: flex; flex-direction: column; gap: 10px; }
+.arm3d-panel label { display: grid; gap: 2px; font-size: 0.88rem; font-weight: 500; color: var(--primary-color); }
+.arm3d-panel label span { display: flex; justify-content: space-between; }
+.arm3d-panel output { color: var(--brown); font-weight: 600; font-variant-numeric: tabular-nums; }
+.arm3d-panel input[type="range"] { width: 100%; accent-color: var(--brown); }
+.arm3d-read { border: 1px solid var(--border-color); background: var(--white); padding: 8px 12px; font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+.arm3d-read div { display: flex; justify-content: space-between; padding: 2px 0; }
+.arm3d-read span { color: var(--text-muted); }
+.arm3d-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.arm3d-btns button { flex: 1 1 auto; white-space: nowrap; padding: 0 12px; min-height: 40px; border-radius: 6px; border: 1.5px solid var(--primary-color); background: transparent; color: var(--primary-color); font: 500 0.85rem 'Inter', sans-serif; cursor: pointer; }
+.arm3d-btns button#demo { background: var(--brown); border-color: var(--brown); color: #fff; }
+.arm3d-btns button:disabled, .arm3d-panel input:disabled { opacity: 0.45; cursor: default; }
+@media (max-width: 800px) {
+    .arm3d { grid-template-columns: 1fr; }
+    .arm3d-view { height: 380px; }
+    .arm3d-panel { border-left: 0; border-top: 1px solid var(--border-color); }
+}
